@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using RaceWinners.Models;
 
@@ -17,7 +17,7 @@ public class DataService
         groups.Add(new Group
         {
             Name = "Class A",
-            Ranks = new List<int> {4, 9, 11, 12}  // etc
+            Ranks = new List<int> {4, 9, 11, 12,20}  // etc
         });
 
         return groups;
