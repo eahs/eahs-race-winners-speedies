@@ -25,13 +25,23 @@ public class Program
         var averages = new double[data.Count]; //double array to store averages of each class
         
         List<string> names = new List<string>();  // Declare the list outside the loop
-        for (int i = 0; i < data.Count; i++)// Adds up, divides, and displays the first 7 indexes in each class 
+        for (int i = 0; i < data.Count; i++)// Adds up, divides, and displays the first 7(or less) indexes in each class 
         {
             names.Add(data[i].Name);  // Add the team name to the list inside the loop
             double average = 0;
+            int rankscount = data[i].Ranks.Count;
+            if (rankscount > 7)
+            {
             for (int j = 0; j < 7; j++)
                 average += data[i].Ranks[j];
             average = average / 7;
+            }
+            else
+            {
+                for (int j = 0; j < rankscount; j++)
+                    average += data[i].Ranks[j];
+                average = average / rankscount;
+            }
             Console.WriteLine($"{data[i].Name} - {average}");
             averages[i] = average; //stores average in double array
         }
